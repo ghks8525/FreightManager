@@ -1,4 +1,4 @@
-package com.jungbang.freightmanager
+package com.jungbang.transitionmanager
 
 import org.junit.Test
 
