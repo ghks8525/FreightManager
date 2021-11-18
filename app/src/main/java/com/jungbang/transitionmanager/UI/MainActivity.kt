@@ -1,4 +1,4 @@
-package com.jungbang.transitionmanager
+package com.jungbang.transitionmanager.UI
 
 import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,10 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.jungbang.freightmanager.Utils.Trace
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Handler
 import androidx.core.app.ActivityCompat
+import com.jungbang.transitionmanager.BackgroundLocationUpdateService
+import com.jungbang.transitionmanager.FCMPushReceiver
+import com.jungbang.transitionmanager.R
 
 
 class MainActivity : AppCompatActivity() {
