@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_rect_white_r10">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vui_cl_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/vui_tv_car_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="현대 액시언트 P520"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/vui_iv_car"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19하 3725"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/vui_tv_car_name"
+            app:layout_constraintTop_toBottomOf="@id/vui_tv_car_name" />
+
+        <ImageView
+            android:id="@+id/vui_iv_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/vi_div_1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/vui_cl_car"
+        app:layout_constraintStart_toStartOf="@id/vui_cl_car"
+        app:layout_constraintEnd_toEndOf="@id/vui_cl_car"/>
+
+    <View
+        android:id="@+id/vi_div_2"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/vi_div_1"
+        app:layout_constraintStart_toStartOf="@id/vi_div_1"
+        app:layout_constraintEnd_toEndOf="@id/vi_div_1"
+        app:layout_constraintBottom_toBottomOf="@id/vui_cl_start"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vui_cl_start"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/vi_div_1"
+        app:layout_constraintStart_toStartOf="@id/vi_div_1"
+        app:layout_constraintEnd_toStartOf="@id/vi_div_2">
+
+        <TextView
+            android:id="@+id/vui_tv_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="출발"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="서울 영등포구  00로 00길 14"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
