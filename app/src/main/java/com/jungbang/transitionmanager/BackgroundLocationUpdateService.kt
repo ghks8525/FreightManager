@@ -25,7 +25,7 @@ import com.google.android.gms.tasks.OnCanceledListener
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.jungbang.freightmanager.Utils.Trace
-import com.jungbang.transitionmanager.UI.MainActivity
+import com.jungbang.transitionmanager.ui.MainActivity
 import java.util.concurrent.TimeUnit
 
 class BackgroundLocationUpdateService : Service(), GoogleApiClient.ConnectionCallbacks,

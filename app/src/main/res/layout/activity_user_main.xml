@@ -10,7 +10,7 @@
             android:id="@+id/aum_cl_intro"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/gray"
+            android:background="@color/green_0ECC6D"
             android:paddingBottom="30dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
             android:id="@+id/aum_cl_list"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/light_gray"
+            android:background="@color/gray_E5E5E5"
             app:layout_constraintTop_toBottomOf="@id/aum_cl_intro"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -148,6 +148,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/aum_rv_list"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/aum_ll_today"

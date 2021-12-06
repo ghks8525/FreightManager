@@ -1,4 +1,4 @@
-package com.jungbang.transitionmanager.UI
+package com.jungbang.transitionmanager.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

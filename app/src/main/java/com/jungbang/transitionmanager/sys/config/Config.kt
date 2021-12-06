@@ -1,4 +1,4 @@
-package com.jungbang.transitionmanager.Sys.Config
+package com.jungbang.transitionmanager.sys.config
 
 class Config {
     companion object{

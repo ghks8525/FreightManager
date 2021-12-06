@@ -1,4 +1,4 @@
-package com.jungbang.transitionmanager.UI
+package com.jungbang.transitionmanager.ui
 
 import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         }
         // Get new FCM registration token
         mPushToken = task.result.toString()
-        Trace.debug("aaaaaaaaaaaaaaaaaaaaaaa = $mPushToken")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.jungbang.transitionmanager.UI
+package com.jungbang.transitionmanager.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.jungbang.transitionmanager.R
-import com.jungbang.transitionmanager.UI.Admin.AdminMainActivity
-import com.jungbang.transitionmanager.UI.User.UserMainActivity
+import com.jungbang.transitionmanager.ui.admin.AdminMainActivity
+import com.jungbang.transitionmanager.ui.user.UserMainActivity
 
 class IndexActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,11 +1,11 @@
-package com.jungbang.transitionmanager.UI
+package com.jungbang.transitionmanager.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.jungbang.transitionmanager.R
-import com.jungbang.transitionmanager.Sys.Config.Config
+import com.jungbang.transitionmanager.sys.config.Config
 import com.jungbang.transitionmanager.databinding.ActivitySplashBinding
 
 class SplashActivity: AppCompatActivity() {
