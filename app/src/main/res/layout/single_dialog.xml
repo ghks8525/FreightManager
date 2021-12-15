@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="296dp"
+        android:layout_height="176dp"
+        android:background="@drawable/bg_rect_white_fill_r8">
+
+        <TextView
+            android:id="@+id/sd_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/notosanskr_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/sd_tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/notosanskr_regular"
+            app:layout_constraintTop_toBottomOf="@id/sd_tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd_btn_ok"
+            android:layout_width="272dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            android:text="@string/confirm"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/notosanskr_medium"
+            android:background="@drawable/bg_rect_green_fill_r10"
+            app:layout_constraintTop_toBottomOf="@id/sd_tv_msg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd_btn_negative"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            android:text="@string/cancel"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/notosanskr_medium"
+            android:background="@drawable/bg_rect_gray_fill_r10"
+            app:layout_constraintTop_toBottomOf="@id/sd_tv_msg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sd_btn_positive"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sd_btn_positive"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            android:text="@string/confirm"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/notosanskr_medium"
+            android:background="@drawable/bg_rect_green_fill_r10"
+            app:layout_constraintTop_toBottomOf="@id/sd_tv_msg"
+            app:layout_constraintStart_toEndOf="@id/sd_btn_negative"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

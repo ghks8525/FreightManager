@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.jungbang.transitionmanager.ui.checkcar.CheckCarActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/acc_col_bottom_sheet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:context=".ui.checkcar.CheckCarActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/acc_cl_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:behavior_peekHeight="84dp"
+                app:layout_behavior="@string/bottom_sheet_behavior">
+
+                <ImageButton
+                    android:id="@+id/acc_btn_user_list"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/bg_rect_green_fill_r16"
+                    android:onClick="@{listener::onClick}"
+                    android:src="@drawable/secondary_list"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/acc_rv_user_list"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="@id/acc_btn_user_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/acc_btn_user_list"
+                    app:layout_constraintTop_toTopOf="@id/acc_btn_user_list" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/acc_cl_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_rect_white_fill_top_r13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/acc_btn_user_list">
+
+                    <View
+                        android:id="@+id/acc_vi_bottom"
+                        android:layout_width="30dp"
+                        android:layout_height="4dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/gray_C4C4C4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/acc_ll_operation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_rect_gray_fill_r60"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/acc_vi_bottom">
+
+                        <Button
+                            android:id="@+id/acc_btn_in_operation"
+                            android:layout_width="159dp"
+                            android:layout_height="38dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/sel_check_btn"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:lineSpacingExtra="0dp"
+                            android:onClick="@{listener::onClick}"
+                            android:paddingVertical="2dp"
+                            android:text="@string/operation"
+                            android:textColor="@drawable/sel_check_btn_text"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/acc_btn_not_operation"
+                            android:layout_width="159dp"
+                            android:layout_height="38dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/sel_check_btn"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:onClick="@{listener::onClick}"
+                            android:paddingVertical="2dp"
+                            android:text="@string/not_operation"
+                            android:textColor="@drawable/sel_check_btn_text"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <!--                    <androidx.core.widget.NestedScrollView-->
+                    <!--                        android:id="@+id/acc_sv_bottom_content"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"-->
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@id/acc_ll_operation">-->
+
+                    <!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:nestedScrollingEnabled="false"-->
+                    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+                    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                            app:layout_constraintEnd_toEndOf="parent">-->
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/acc_rv_in_operation_list"
+                        android:layout_width="0dp"
+                        android:layout_height="488dp"
+                        android:layout_marginTop="10dp"
+                        android:nestedScrollingEnabled="false"
+                        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/acc_ll_operation" />
+                    <!--                                app:layout_constraintTop_toTopOf="parent"/>-->
+
+                    <!--                            <androidx.recyclerview.widget.RecyclerView-->
+                    <!--                                android:id="@+id/acc_rv_not_operation_list"-->
+                    <!--                                android:layout_width="0dp"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:layout_marginTop="10dp"-->
+                    <!--                                android:visibility="gone"-->
+                    <!--                                app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                                app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                                app:layout_constraintTop_toTopOf="parent"/>-->
+                    <!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+                    <!--                    </androidx.core.widget.NestedScrollView>-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

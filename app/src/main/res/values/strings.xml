@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">transitionmanager</string>
+    <string name="confirm">확인</string>
+    <string name="cancel">취소</string>
+
+    <!--    login   -->
+    <string name="login">로그인</string>
+    <string name="phone_num">핸드폰 번호</string>
+    <string name="pw">비밀번호</string>
+
+    <!--    noti    -->
+    <string name="notification">공지사항</string>
+    <string name="noti_title_hint">제목을 입력해주세요.</string>
+    <string name="noti_content_hint">내용을 입력해주세요.</string>
+    <string name="noti_write">작성하기</string>
+
+    <!--    admin_main  -->
+    <string name="current_car">현재 운행중인 차량</string>
+    <string name="real_time_car">실시간 차량 확인</string>
+    <string name="manage_user">사용자 관리</string>
+    <string name="manage_car">차량관리</string>
+    <string name="transportation_history">운송내역</string>
+
+    <!--    history  -->
+    <string name="search">검색</string>
+
+    <!--    manage_user   -->
+    <string name="search_driver">기사명 검색</string>
+
+    <!--    check_car   -->
+    <string name="operation">운행중</string>
+    <string name="not_operation">미 운행 차량</string>
 </resources>

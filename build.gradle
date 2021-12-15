@@ -4,6 +4,7 @@ buildscript {
         google()
         mavenCentral()
         jcenter()
+        maven { url 'https://navercorp.bintray.com/maps' }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"

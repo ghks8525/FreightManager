@@ -1,105 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/gray_f5f5f5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/aam_cl_company_manage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-            <TextView
-                android:id="@+id/aam_tv_company_manage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="회사 관리"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <Button
-                android:id="@+id/aam_btn_user_manage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="사용자 관리"
-                app:layout_constraintTop_toBottomOf="@id/aam_tv_company_manage"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <Button
-                android:id="@+id/aam_btn_vehicle_manage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="차량 관리"
-                app:layout_constraintTop_toBottomOf="@id/aam_tv_company_manage"
-                app:layout_constraintStart_toEndOf="@id/aam_btn_user_manage"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/aam_cl_working_manage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/aam_cl_company_manage"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <TextView
-                android:id="@+id/aam_tv_working_manage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="업무 관리"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <Button
-                android:id="@+id/aam_btn_location_manage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="위치 조회"
-                app:layout_constraintTop_toBottomOf="@id/aam_tv_working_manage"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="지난 업무 조회"
-                app:layout_constraintTop_toBottomOf="@id/aam_tv_working_manage"
-                app:layout_constraintStart_toEndOf="@id/aam_btn_location_manage"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/aam_cl_today_list"
+            android:id="@+id/aam_cl_top"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/aam_cl_working_manage"
+            android:layout_height="280dp"
+            android:background="@color/green_0ECC6D"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <TextView
-                android:id="@+id/aam_tv_today_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="오늘 업무 리스트"
+            <ImageView
+                android:id="@+id/aam_iv_logo"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/logo_korean_bg"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="0dp"
+            <ImageView
+                android:id="@+id/aam_iv_alarm"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/aam_tv_today_list"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/primary"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/aam_tv_current_driving_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="89dp"
+                android:layout_marginStart="45dp"
+                android:text="@string/current_car"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="@color/gray_f1f1f1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/aam_tv_current_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="0dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="36sp"
+                android:textColor="#ffffff"
+                tools:text="5대"
+                app:layout_constraintTop_toBottomOf="@id/aam_tv_current_driving_car"
+                app:layout_constraintStart_toStartOf="@id/aam_tv_current_driving_car"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="45dp"
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="12dp"
+                android:lineSpacingExtra="0dp"
+                android:text="@string/real_time_car"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="14sp"
+                android:textColor="#0ecc6d"
+                android:background="@drawable/bg_rect_white_fill_r13"
+                app:layout_constraintTop_toTopOf="@id/aam_tv_current_car"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/aam_tv_current_car"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/aam_ll_menu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="배차 추가"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/aam_cl_today_list"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:paddingVertical="18dp"
+            android:background="@drawable/bg_rect_white_fill_r8"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/aam_cl_top"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/aam_cl_top">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="7.4dp"
+                    android:paddingStart="7.9dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="9.5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/primary_user"
+                    android:background="@drawable/bg_rect_green_op10_fill_r10"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/manage_user"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textSize="14sp"
+                    android:textColor="#333333"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="47dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="7.4dp"
+                    android:paddingStart="7.9dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="9.5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/secondary_filter_3"
+                    android:background="@drawable/bg_rect_green_op10_fill_r10"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/manage_car"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textSize="14sp"
+                    android:textColor="#333333"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="55dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="7.4dp"
+                    android:paddingStart="7.9dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="9.5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/secondary_clock"
+                    android:background="@drawable/bg_rect_green_op10_fill_r10"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/transportation_history"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textSize="14sp"
+                    android:textColor="#333333"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/aam_ll_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

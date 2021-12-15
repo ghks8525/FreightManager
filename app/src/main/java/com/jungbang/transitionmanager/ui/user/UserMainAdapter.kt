@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jungbang.freightmanager.Utils.Trace
 import com.jungbang.transitionmanager.R
+import com.jungbang.transitionmanager.ui.common.SingleDialog
 
 class UserMainAdapter() : RecyclerView.Adapter<UserMainAdapter.ViewHolder>() {
 
@@ -21,7 +22,6 @@ class UserMainAdapter() : RecyclerView.Adapter<UserMainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(mContext).inflate(R.layout.view_user_inform, parent, false)
-        Trace.debug("aaaaaaaaaaaaaaa")
         return ViewHolder(view)
     }
 
