@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="listener"
+            type="com.jungbang.transitionmanager.ui.common.ComponentItemListener" />
+        <variable
+            name="pos"
+            type="int" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_rect_white_fill_r8"
+        android:orientation="horizontal"
+        android:paddingVertical="12dp">
+
+        <View
+            android:id="@+id/vi_div_1"
+            android:layout_width="4dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_rect_green_fill_r16"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/vum_tv_driver_name"/>
+
+        <TextView
+            android:id="@+id/vum_tv_driver_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="박하늘 "
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vi_div_1"
+            app:layout_constraintEnd_toStartOf="@id/vum_tv_contract"/>
+
+        <TextView
+            android:id="@+id/vum_tv_contract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="정규직"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vum_tv_driver_name"
+            app:layout_constraintEnd_toStartOf="@id/vum_tv_complete"/>
+
+        <TextView
+            android:id="@+id/vum_tv_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="18건"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vum_tv_contract"
+            app:layout_constraintEnd_toStartOf="@id/vum_tv_date"/>
+
+        <TextView
+            android:id="@+id/vum_tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="2dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="21.03.2"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vum_tv_complete"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

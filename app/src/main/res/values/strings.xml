@@ -21,11 +21,26 @@
     <string name="manage_car">차량관리</string>
     <string name="transportation_history">운송내역</string>
 
+    <!--    user_main  -->
+    <string name="start">출발</string>
+    <string name="end">도착</string>
+
     <!--    history  -->
     <string name="search">검색</string>
+    <string name="driver_name">기사명</string>
+    <string name="car_info">차량정보</string>
+    <string name="start_time">출발시각</string>
+    <string name="end_time">도착시각</string>
+    <string name="history_title">운송 내역보기</string>
+    <string name="car_num">차량번호</string>
+    <string name="start_info">출발정보</string>
+    <string name="end_info">도착정보</string>
 
     <!--    manage_user   -->
     <string name="search_driver">기사명 검색</string>
+    <string name="contract">계약종류</string>
+    <string name="complete">완료건수</string>
+    <string name="signing">가입일자</string>
 
     <!--    check_car   -->
     <string name="operation">운행중</string>

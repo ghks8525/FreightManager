@@ -74,12 +74,16 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn_7"
+            android:text="UI:ADMIN_HISTORY"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp" />
 
 
         <Button
+            android:id="@+id/btn_8"
+            android:text="UI:ADMIN_HISTORY_DIALOG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp" />
@@ -104,6 +108,8 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn_9"
+            android:text="UI:USER_MANAGE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp" />

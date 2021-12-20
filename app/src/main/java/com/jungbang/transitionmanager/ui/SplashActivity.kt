@@ -1,5 +1,6 @@
 package com.jungbang.transitionmanager.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import com.jungbang.transitionmanager.R
 import com.jungbang.transitionmanager.sys.config.Config
 import com.jungbang.transitionmanager.databinding.ActivitySplashBinding
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity: AppCompatActivity() {
     lateinit var mBinding:ActivitySplashBinding
 
