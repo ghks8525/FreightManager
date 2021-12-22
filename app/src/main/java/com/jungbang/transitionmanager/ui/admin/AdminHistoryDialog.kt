@@ -16,7 +16,7 @@ class AdminHistoryDialog: DialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         mBinding = DialogHistoryBinding.inflate(inflater, container, false)
         mBinding.listener = this
         

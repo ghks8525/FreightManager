@@ -11,9 +11,7 @@ class ActionBar(var listener: onActionBarListener)
         const val ACTION_NONE = 0
         const val ACTION_BACK = 1
         const val ACTION_CREATE = 2
-        const val ACTION_MENU = 3
-        const val ACTION_NOTI = 4
-        const val ACTION_INFO = 5
+        const val ACTION_ADD = 3
 
         const val ALIGN_LEFT = 5
         const val ALIGN_CENTER = 0
@@ -75,6 +73,7 @@ class ActionBar(var listener: onActionBarListener)
         return when (direction) {
             ACTION_BACK -> R.drawable.primary_arrow_left
             ACTION_CREATE -> R.drawable.secondary_create
+            ACTION_ADD -> R.drawable.primary_plus
             else -> 0
         }
     }

@@ -14,6 +14,8 @@
         android:layout_width="79dp"
         android:layout_height="48dp"
         android:layout_marginStart="10dp"
+        android:clickable="true"
+        android:focusable="true"
         android:onClick="@{v -> listener.onClick(v,pos)}"
         android:background="@drawable/bg_rect_white_fill_r16">
 

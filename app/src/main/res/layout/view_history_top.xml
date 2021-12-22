@@ -2,41 +2,47 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginStart="4dp"
         android:layout_marginBottom="12dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="45dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:fontFamily="@font/notosanskr_bold"
             android:text="@string/driver_name"
             android:textColor="@color/green_0ECC6D"
             android:textSize="12sp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="42dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:fontFamily="@font/notosanskr_bold"
             android:text="@string/car_info"
             android:textColor="@color/green_0ECC6D"
             android:textSize="12sp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="34dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:fontFamily="@font/notosanskr_bold"
             android:text="@string/start_time"
             android:textColor="@color/green_0ECC6D"
             android:textSize="12sp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:fontFamily="@font/notosanskr_bold"
             android:text="@string/end_time"
             android:textColor="@color/green_0ECC6D"

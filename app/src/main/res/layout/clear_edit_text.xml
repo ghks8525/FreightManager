@@ -34,7 +34,7 @@
         android:id="@+id/cet_iv_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/ic_close_circle"
         app:layout_constraintTop_toTopOf="@id/cet_et"
         app:layout_constraintEnd_toEndOf="parent"

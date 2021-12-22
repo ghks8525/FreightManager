@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.jungbang.transitionmanager.ui.admin.UserAddDialog" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/dua_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/add_user"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/dua_et_user_name"
+            android:layout_width="272dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_rect_e7e7e7_r8"
+            android:fontFamily="@font/notosanskr_regular"
+            android:hint="@string/user_name"
+            android:lineSpacingExtra="6sp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="14dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dua_tv_title" />
+
+        <EditText
+            android:id="@+id/dua_et_user_phone"
+            android:layout_width="272dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_rect_e7e7e7_r8"
+            android:fontFamily="@font/notosanskr_regular"
+            android:hint="@string/user_phone"
+            android:lineSpacingExtra="6sp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="14dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dua_et_user_name" />
+
+        <TextView
+            android:id="@+id/dua_tv_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/signing"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@id/dua_rg_contact"
+            app:layout_constraintStart_toStartOf="@id/dua_et_user_phone"
+            app:layout_constraintTop_toTopOf="@id/dua_rg_contact" />
+
+        <RadioGroup
+            android:id="@+id/dua_rg_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dua_et_user_phone">
+
+            <RadioButton
+                android:id="@+id/dua_rb_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/user_regular"
+                android:checked="true"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <RadioButton
+                android:id="@+id/dua_rb_free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/user_free"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dua_rg_contact">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dua_btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_333333_fill_r8"
+                android:fontFamily="@font/notosanskr_regular"
+                android:lineSpacingExtra="4sp"
+                android:onClick="@{listener::onClick}"
+                android:text="@string/cancel"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dua_btn_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_green_fill_r8"
+                android:fontFamily="@font/notosanskr_regular"
+                android:lineSpacingExtra="4sp"
+                android:onClick="@{listener::onClick}"
+                android:text="@string/confirm"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

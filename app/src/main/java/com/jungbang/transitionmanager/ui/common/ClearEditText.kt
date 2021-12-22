@@ -108,4 +108,5 @@ class ClearEditText : ConstraintLayout, View.OnClickListener, TextWatcher,
             setClearIconVisible(false)
     }
 
+    fun getText(): String = editText.text.toString()
 }

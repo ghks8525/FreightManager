@@ -29,7 +29,6 @@ class CheckCarActivity : AppCompatActivity(), ComponentItemListener {
             val mapViewContainer = mBinding.mapView
             mapViewContainer.addView(mapView)
         } catch (e: Exception) {
-            Trace.debug("aaaaaaaaaaaaaaaaaaaaa = $e)")
             e.printStackTrace()
         }
 //        val bottomSheet = BottomSheetBehavior.from(mBinding.accClBottom)

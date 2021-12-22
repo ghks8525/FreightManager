@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.jungbang.transitionmanager.ui.admin.UserDialog" />
+
+        <variable
+            name="data"
+            type="com.jungbang.transitionmanager.model.dto.Users.Response.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/du_cl_user"
+            android:layout_width="296dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/du_tv_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:lineSpacingExtra="8sp"
+                android:text="@{data.recruitType}"
+                android:textColor="@color/green_0ECC6D"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/du_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:lineSpacingExtra="-4sp"
+                android:text="@{data.userName}"
+                android:textColor="#333333"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/du_tv_contact"
+                app:layout_constraintTop_toBottomOf="@id/du_tv_contact" />
+
+            <ImageView
+                android:id="@+id/du_iv_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{listener::onClick}"
+                android:src="@drawable/primary_trash_bin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/du_tv_name" />
+
+            <ImageView
+                android:id="@+id/du_iv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{listener::onClick}"
+                android:src="@drawable/black_secondary_create"
+                app:layout_constraintEnd_toStartOf="@id/du_iv_delete"
+                app:layout_constraintTop_toTopOf="@id/du_iv_delete" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/div_vi_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="20dp"
+            android:background="@color/gray_e9e9e9"
+            app:layout_constraintEnd_toEndOf="@id/du_cl_user"
+            app:layout_constraintStart_toStartOf="@id/du_cl_user"
+            app:layout_constraintTop_toBottomOf="@id/du_cl_user" />
+
+        <TextView
+            android:id="@+id/du_tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:lineSpacingExtra="7sp"
+            android:text="@string/signing"
+            android:textColor="@color/gray_999999"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/div_vi_1"
+            app:layout_constraintTop_toBottomOf="@id/div_vi_1" />
+
+        <TextView
+            android:id="@+id/du_tv_user_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="end"
+            android:lineSpacingExtra="7sp"
+            android:text="@{data.createDate}"
+            android:textColor="@color/gray_333333"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/div_vi_1"
+            app:layout_constraintTop_toTopOf="@id/du_tv_date" />
+
+
+        <TextView
+            android:id="@+id/du_tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:lineSpacingExtra="7sp"
+            android:text="@string/user_phone"
+            android:textColor="@color/gray_999999"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/div_vi_1"
+            app:layout_constraintTop_toBottomOf="@id/du_tv_date" />
+
+        <TextView
+            android:id="@+id/du_tv_user_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="end"
+            android:lineSpacingExtra="7sp"
+            android:text="@{data.phoneNumber}"
+            android:textColor="@color/gray_333333"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/div_vi_1"
+            app:layout_constraintTop_toTopOf="@id/du_tv_phone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/du_btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_rect_333333_fill_r8"
+            android:fontFamily="@font/notosanskr_medium"
+            android:lineSpacingExtra="4sp"
+            android:onClick="@{listener::onClick}"
+            android:text="@string/confirm"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/du_cl_user"
+            app:layout_constraintStart_toStartOf="@id/du_cl_user"
+            app:layout_constraintTop_toBottomOf="@id/du_tv_phone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
