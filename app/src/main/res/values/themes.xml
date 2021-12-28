@@ -22,4 +22,8 @@
         <item name="android:button">@drawable/sel_radio_btn</item>
     </style>
 
+    <style name="bottomDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="height">540dp</item>
+    </style>
+
 </resources>

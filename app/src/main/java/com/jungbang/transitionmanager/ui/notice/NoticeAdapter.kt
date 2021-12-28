@@ -6,18 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.jungbang.transitionmanager.BR
 import com.jungbang.transitionmanager.R
 import com.jungbang.transitionmanager.databinding.ViewNoticeBinding
+import com.jungbang.transitionmanager.model.dto.CommonData
+import com.jungbang.transitionmanager.ui.admin.UserManageViewmodel
 import com.jungbang.transitionmanager.ui.common.ComponentItemListener
 
-class NoticeAdapter() : RecyclerView.Adapter<NoticeAdapter.ViewHolder>() {
-
-    lateinit var mContext: Context
-
-    constructor(context: Context) : this() {
-        this.mContext = context
+class NoticeAdapter(val mContext:Context) : RecyclerView.Adapter<NoticeAdapter.ViewHolder>() {
+    private val mViewModel = (mContext as FragmentActivity).run {
+        val viewModel: NoticeViewModel by viewModels()
+        viewModel
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,13 +30,18 @@ class NoticeAdapter() : RecyclerView.Adapter<NoticeAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val binding = holder.getBinding()
+
+        if (mViewModel.mldNotices.value == null)
+            return
+
         binding.listener = mContext as ComponentItemListener
         binding.pos = position
+        binding.data = mViewModel.mldNotices.value!!.Items[position]
+        binding.isAmdin = CommonData.userinfo?.recruitType == "admin"
     }
 
-    override fun getItemCount(): Int = 70
+    override fun getItemCount(): Int = mViewModel.mldNotices.value.let{ it?.Items?.count() ?: 0 }
 
     override fun getItemId(position: Int): Long {
         return position.hashCode().toLong()
@@ -44,6 +52,8 @@ class NoticeAdapter() : RecyclerView.Adapter<NoticeAdapter.ViewHolder>() {
         var vn_tv_date = v.findViewById<TextView>(R.id.vn_tv_date)
         var vn_tv_msg = v.findViewById<TextView>(R.id.vn_tv_msg)
         var vn_iv_arrow = v.findViewById<ImageView>(R.id.vn_iv_arrow)
+        var vn_tv_edit = v.findViewById<TextView>(R.id.vn_tv_edit)
+        var vn_tv_delete = v.findViewById<TextView>(R.id.vn_tv_delete)
 
         fun getBinding() = DataBindingUtil.getBinding<ViewNoticeBinding>(itemView) as ViewNoticeBinding
 

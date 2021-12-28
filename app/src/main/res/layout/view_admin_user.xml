@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="pos"
+            type="int" />
+
+        <variable
+            name="listener"
+            type="com.jungbang.transitionmanager.ui.common.ComponentItemListener" />
+
+        <variable
+            name="data"
+            type="com.jungbang.transitionmanager.model.dto.Vehicles.Response.Vehicle" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="320dp"
+        android:layout_height="144dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_rect_white_fill_r8"
+        android:onClick="@{v -> listener.onClick(v,pos)}">
+
+        <TextView
+            android:id="@+id/vau_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:text="박하늘 기사"
+            android:textColor="@color/gray_3a3a3a"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/vau_tv_user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="@{data.carSerialNumber + ` · ` +data.carModel}"
+            android:textColor="@color/gray_999999"
+            android:textSize="10sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@id/vau_tv_name"
+            app:layout_constraintTop_toBottomOf="@id/vau_tv_name" />
+
+        <TextView
+            android:id="@+id/vau_tv_status"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_oval_green"
+            android:fontFamily="@font/notosanskr_regular"
+            android:gravity="center"
+            android:minLines="2"
+            android:text="운행\n완료"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/vau_tv_name" />
+
+        <View
+            android:id="@+id/vi_div"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray_C4C4C4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vau_tv_user_info" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vau_cl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vi_div">
+
+            <TextView
+                android:id="@+id/vau_tv_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="출발 "
+                android:textColor="@color/green_0ECC6D"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/vau_tv_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="07:48"
+                android:textColor="@color/gray_3a3a3a"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/vau_tv_start"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/vau_tv_start_info"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="서울 영등포구 OO로 OO길 XXX 아파트 "
+                android:textColor="@color/gray_6e6e6e"
+                android:textSize="10sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vau_tv_start" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vau_cl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="38dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vi_div">
+
+            <TextView
+                android:id="@+id/vau_tv_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="출발 "
+                android:textColor="@color/orange_fa6232"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/vau_tv_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="07:48"
+                android:textColor="@color/gray_3a3a3a"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/vau_tv_end"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/vau_tv_end_info"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="서울 영등포구 OO로 OO길 XXX 아파트 "
+                android:textColor="@color/gray_6e6e6e"
+                android:textSize="10sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vau_tv_end" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

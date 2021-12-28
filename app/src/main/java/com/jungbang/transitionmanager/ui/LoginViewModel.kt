@@ -3,6 +3,7 @@ package com.jungbang.transitionmanager.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.jungbang.freightmanager.Utils.Trace
+import com.jungbang.transitionmanager.model.dto.CommonData
 import com.jungbang.transitionmanager.model.dto.Login
 import com.jungbang.transitionmanager.model.dto.Users
 import com.jungbang.transitionmanager.model.http.LoginProtocol
@@ -22,7 +23,8 @@ class LoginViewModel: ViewModel() {
         protocol.setHttpResponsable(object : HttpResponsable<Login.Response.Data> {
             override fun onResponse(res: Login.Response.Data) {
                 Trace.debug("++ Success = ${res.Items[0].companyId}")
-                mldUser.value = res.Items[0]
+                CommonData.userinfo = res.Items[0]
+                mldUser.value = CommonData.userinfo
             }
 
             override fun onFailure(nError: Int, strMsg: String) {

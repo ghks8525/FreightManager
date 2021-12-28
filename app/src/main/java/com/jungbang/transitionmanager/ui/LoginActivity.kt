@@ -28,10 +28,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun onDataListChanged(data: Login.Response.User) {
-        Utils.setPrefString(this, "id", mBinding.alCeId.getText())
-        Utils.setPrefString(this, "pw", mBinding.alCePw.getText())
-        Utils.setPrefString(this, "companyId", data.companyId)
-        Utils.setPrefInt(this, "userId", data.id)
 
         val intent = if (data.recruitType == "admin") Intent(
             this,

@@ -66,6 +66,10 @@
             android:name=".ui.admin.UserManageActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".ui.admin.AdminScheduleActivity"
+            android:exported="true" />
+
         <service
             android:name=".FCMPushReceiver"
             android:exported="true">

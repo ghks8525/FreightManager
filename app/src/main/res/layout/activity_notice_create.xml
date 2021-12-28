@@ -4,6 +4,10 @@
         <variable
             name="actionbar"
             type="com.jungbang.transitionmanager.ui.common.ActionBar" />
+
+        <variable
+            name="listener"
+            type="com.jungbang.transitionmanager.ui.notice.NoticeCreateActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -44,6 +48,7 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <EditText
+            android:id="@+id/anc_et_content"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -55,6 +60,21 @@
             android:lineSpacingExtra="6sp"
             android:background="@color/transparent"
             app:layout_constraintTop_toBottomOf="@id/vi_div"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/noti_confirm"
+            android:onClick="@{listener::onClick}"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 

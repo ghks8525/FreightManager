@@ -13,6 +13,9 @@
     <string name="noti_title_hint">제목을 입력해주세요.</string>
     <string name="noti_content_hint">내용을 입력해주세요.</string>
     <string name="noti_write">작성하기</string>
+    <string name="noti_edit">편집</string>
+    <string name="noti_delete">삭제</string>
+    <string name="noti_confirm">작성완료</string>
 
     <!--    admin_main  -->
     <string name="current_car">현재 운행중인 차량</string>
@@ -48,6 +51,12 @@
     <string name="user_contact">계약형태</string>
     <string name="user_free">프리랜서</string>
     <string name="user_regular">정규직</string>
+
+
+    <!--    manage_car   -->
+    <string name="model">모델</string>
+    <string name="car_year">연식</string>
+    <string name="search_car">차량 검색</string>
 
     <!--    check_car   -->
     <string name="operation">운행중</string>

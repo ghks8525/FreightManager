@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
+        <import type="android.view.View" />
+
         <variable
             name="listener"
             type="com.jungbang.transitionmanager.ui.common.ComponentItemListener" />
+
         <variable
             name="pos"
             type="int" />
+
+        <variable
+            name="data"
+            type="com.jungbang.transitionmanager.model.dto.Notices.Response.Notice" />
+
+        <variable
+            name="isAmdin"
+            type="Boolean" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vn_cl_root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="@{v -> listener.onClick(v, pos)}">
@@ -23,7 +36,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/notosanskr_medium"
-            android:text="[공지] 차량점검 및 정비 관련 안내"
+            android:text="@{data.title}"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosanskr_medium"
-            android:text="2021.11.30"
+            android:text="@{data.createDate}"
             android:textColor="@color/gray_b2b2b2"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@id/vn_tv_title"
@@ -50,24 +63,73 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/vn_tv_title" />
 
-        <TextView
-            android:id="@+id/vn_tv_msg"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
             android:background="@color/gray_f4f4f4"
-            android:fontFamily="@font/notosanskr_regular"
-            android:padding="20dp"
-            android:text="모든 기사들에게 알립니다. 11월 30일은 폭설예정이므로 근무 예정을 중단 하겠습니다.
-문의사항이 있을경우 연락 바랍니다.
-
-감사합니다."
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:visibility="gone"
+            android:visibility="@{data.selected ? View.VISIBLE : View.GONE}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/vn_tv_date" />
+            app:layout_constraintTop_toBottomOf="@id/vn_tv_date">
+
+            <LinearLayout
+                android:id="@+id/vn_ll_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal"
+                android:visibility="@{isAmdin ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/vn_tv_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_rect_999999_r36"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:lineSpacingExtra="8sp"
+                    android:onClick="@{v -> listener.onClick(v, pos)}"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="2dp"
+                    android:text="@string/noti_edit"
+                    android:textColor="@color/gray_999999"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/vn_tv_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rect_999999_r36"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:lineSpacingExtra="8sp"
+                    android:onClick="@{v -> listener.onClick(v, pos)}"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="2dp"
+                    android:text="@string/noti_delete"
+                    android:textColor="@color/gray_999999"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/vn_tv_msg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:padding="20dp"
+                android:text="@{data.content}"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vn_ll_edit" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

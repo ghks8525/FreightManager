@@ -34,7 +34,7 @@
             app:layout_constraintTop_toBottomOf="@id/acm_inc_top" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/amu_cl_top"
+            android:id="@+id/acm_cl_top"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -46,7 +46,7 @@
             app:layout_constraintTop_toBottomOf="@id/vi_div_1">
 
             <ImageView
-                android:id="@+id/amu_iv_search"
+                android:id="@+id/acm_iv_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
@@ -56,7 +56,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/amu_et_search"
+                android:id="@+id/acm_et_search"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="11dp"
@@ -64,11 +64,11 @@
                 android:layout_marginEnd="16dp"
                 android:background="@color/transparent"
                 android:fontFamily="sans-serif"
-                android:hint="@string/search_driver"
+                android:hint="@string/search_car"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/amu_iv_search"
+                app:layout_constraintStart_toEndOf="@id/acm_iv_search"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -86,17 +86,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/amu_et_search" />
+                app:layout_constraintTop_toBottomOf="@id/acm_et_search" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Spinner
-            android:id="@+id/amu_sp"
+            android:id="@+id/acm_sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/amu_cl_top" />
+            app:layout_constraintTop_toBottomOf="@id/acm_cl_top" />
 
         <View
             android:id="@+id/vi_div_2"
@@ -107,10 +107,10 @@
             android:background="@color/gray_e9e9e9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/amu_sp" />
+            app:layout_constraintTop_toBottomOf="@id/acm_sp" />
 
         <LinearLayout
-            android:id="@+id/amu_ll_list_header"
+            android:id="@+id/acm_ll_list_header"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -126,7 +126,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/notosanskr_bold"
                 android:gravity="center"
-                android:text="@string/driver_name"
+                android:text="@string/car_num"
                 android:textColor="#0ecc6d"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -137,7 +137,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/notosanskr_bold"
                 android:gravity="center"
-                android:text="@string/contract"
+                android:text="@string/model"
                 android:textColor="#0ecc6d"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -148,7 +148,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/notosanskr_bold"
                 android:gravity="center"
-                android:text="@string/signing"
+                android:text="@string/car_year"
                 android:textColor="#0ecc6d"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -156,7 +156,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/amu_rv_list"
+            android:id="@+id/acm_rv_list"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginHorizontal="20dp"
@@ -164,7 +164,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/amu_ll_list_header" />
+            app:layout_constraintTop_toBottomOf="@id/acm_ll_list_header" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

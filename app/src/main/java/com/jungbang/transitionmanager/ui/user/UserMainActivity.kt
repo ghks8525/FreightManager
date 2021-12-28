@@ -1,6 +1,8 @@
 package com.jungbang.transitionmanager.ui.user
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.jungbang.transitionmanager.R
 import com.jungbang.transitionmanager.ui.CalendarFragment
 import com.jungbang.transitionmanager.ui.common.ComponentItemListener
+import com.jungbang.transitionmanager.ui.notice.NoticeActivity
 
 
 class UserMainActivity:AppCompatActivity(), ComponentItemListener {
@@ -19,6 +22,7 @@ class UserMainActivity:AppCompatActivity(), ComponentItemListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_user_main)
+        mBinding.listener = this
 
         mAdapter = UserMainAdapter(this)
         mBinding.aumRvList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -33,5 +37,13 @@ class UserMainActivity:AppCompatActivity(), ComponentItemListener {
 
         transaction.commit() //commit으로 저장 하지 않으면 화면 전환이 되지 않음
 
+    }
+
+    fun onClick(v: View){
+        when(v.id){
+            R.id.aum_iv_alarm -> {
+                startActivity(Intent(this, NoticeActivity::class.java))
+            }
+        }
     }
 }
